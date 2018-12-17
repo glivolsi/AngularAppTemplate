@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
-import { LoginComponent } from './login/login.component';
 import { CommonModule } from '@angular/common';
 import { StoreModule } from '@ngrx/store';
-import * as fromAuth from './auth.reducer';
+
+import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './login/logout.component';
+
+import * as fromAuth from './auth.reducer';
 
 @NgModule({
     imports: [CommonModule, StoreModule.forFeature('auth', fromAuth.authReducer)],

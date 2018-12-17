@@ -1,12 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
     selector: 'logout',
     template: `logout work`
 })
 
-export class LogoutComponent implements OnInit {
-    constructor() { }
-
-    ngOnInit() { }
+export class LogoutComponent {
 }

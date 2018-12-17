@@ -9,7 +9,7 @@
     <div class="header-actions">
       <clr-dropdown>
         <button class="nav-text" clrDropdownTrigger style="outline-style: none">
-          {{auth|async}}
+          {{(User$|async).UserName}}
           <clr-icon shape="caret down"></clr-icon>
         </button>
         <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right" class="top-border">
