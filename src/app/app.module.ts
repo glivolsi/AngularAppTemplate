@@ -8,6 +8,9 @@ import { reducers, metaReducers } from './reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 
+import { HttpClientModule } from '@angular/common/http';
+import { NgHttpLoaderModule } from 'ng-http-loader';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AuthModule } from './auth/auth.module';
 import { SharedModule } from './shared/shared.module';
@@ -18,22 +21,20 @@ import { WelcomeComponent } from './features/welcome/welcome.component';
 import { DemoComponent } from './features/demofeature/demofeature.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    WelcomeComponent,
-    DemoComponent
-  ],
+  declarations: [AppComponent, WelcomeComponent, DemoComponent],
   imports: [
     BrowserModule,
-    AppRoutingModule, BrowserAnimationsModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    NgHttpLoaderModule.forRoot(),
     CoreModule,
     SharedModule,
     AuthModule,
     StoreModule.forRoot(reducers, { metaReducers }),
     !environment.production ? StoreDevtoolsModule.instrument() : []
-
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
